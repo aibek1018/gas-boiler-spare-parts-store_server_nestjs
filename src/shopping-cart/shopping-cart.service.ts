@@ -57,7 +57,7 @@ export class ShoppingCartService {
 
     const part = await this.shoppingCartModel.findOne({ where: { partId } });
 
-    return { total_price: part.total_price };
+    return { total_price: part?.total_price };
   }
 
   async remove(partId: number | string): Promise<void> {
